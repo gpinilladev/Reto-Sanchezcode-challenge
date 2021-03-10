@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<!-- ********** START - Inicio documento html ********** -->
+<html lang="en">
+<!-- ********** START - Head o cabecera de el documento html ********** -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">  -->
+    <title>Sanchezcode Challenge Web App</title>
+    <!-- Custom styles for this template -->
+    <link href="./assets/css/style.css" rel="stylesheet" />
+</head>
+<!-- *********** END - Head o cabecera de el documento html *********** -->
+<body>
+	<main class="container">
+		<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+			<h1 class="display-4">Sanchezcode Challenge</h1>
+			<p class="lead">
+                Bienvenido al reto de <strong>Andres Sanchez</strong>, el cual consiste en llenar los contenedores de letras 
+                y numeros respectivmente respetando que se ingresen en orden tanto numeros como letras.
+                <br>
+                El reto consiste  en desarrollar un programa que ingrese las letras en orden alfabetico y si por al gun motivo 
+                las letras se ingresan en desorden debe mostrar una alerta indicando que deben ir en el orden adecuado o que faltan letras.
+                <br>
+                Del mismo modo que las letras funciona con los numeros, deben ser agregados una vez ya esten las letras ABCDEFGHIJ, alo cual seguiran los numeros que 
+                comparten los botones con las letras.
+            </p>
+		</div>
+        <!-- ***** START - Card contenedora de letras ***** -->
+        <div class="row mb-3 row-cols-1 p-2">
+            <div class="card m-0 p-0">
+                <div class="card-header text-white bg-primary">
+                    Contenedor de letras
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Letras: </h5>
+                    <div id="letras">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ***** END - Card contenedora de letras ***** -->
+        <!-- ***** START - Card contenedora de números ***** -->
+        <div class="row mb-3 row-cols-1 p-2">
+            <div class="card m-0 p-0">
+                <div class="card-header text-white bg-primary">
+                    Contenedor de n&uacute;meros
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">N&uacute;umeros: </h5>
+                    <div id="numeros">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ***** END - Card contenedora de números ***** -->
+        <!-- <div class="row mb-3 row-cols-1 p-2">
+            <div class="text-center">
+                <button id="btnLimpiarContenedores" type="button" class="w-100 btn btn-lg btn-primary">Limpiar contenedores</button>
+            </div>
+        </div> -->
+
+		<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+            <!-- ***** START - Content Boton A - 1 ***** -->
+			<div class="col">
+				<div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+						<h4 class="my-0 fw-normal">Bot&oacute;n A - 1</h4>
+					</div>
+					<div class="card-body">
+						<p class="lead">
+                            Este bot&oacute;n contiene la letra <strong>A</strong> y/o el n&uacute;mero <strong>1</strong>
+                        </p>
+						<button id="btnA1" type="button" class="w-100 btn btn-lg btn-primary">A - 1</button>
+					</div>
+				</div>
+			</div>
+            <!-- ***** END - Content Boton A - 1 ***** -->
+            <!-- ***** START - Content Boton B - 2 ***** -->
+			<div class="col">
+				<div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+						<h4 class="my-0 fw-normal">Bot&oacute;n B - 2</h4>
+					</div>
+					<div class="card-body">
+						<p class="lead">
+                            Este bot&oacute;n contiene la leta <strong>B</strong> y/o el n&uacute;mero <strong>2</strong>
+                        </p>
+						<button id="btnB2" type="button" class="w-100 btn btn-lg btn-primary">B - 2</button>
+					</div>
+				</div>
+			</div>
+            <!-- ***** END - Content Boton B - 2 ***** -->
+            <!-- ***** START - Content Boton C - 3 ***** -->
+            <div class="col">
+				<div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+						<h4 class="my-0 fw-normal">Bot&oacute;n C - 3</h4>
+					</div>
+					<div class="card-body">
+						<p class="lead">
+                            Este bot&oacute;n contiene la leta <strong>C</strong> y/o el n&uacute;mero <strong>3</strong>
+                        </p>
+						<button id="btnC3" type="button" class="w-100 btn btn-lg btn-primary">C - 3</button>
+					</div>
+				</div>
+			</div>
+            <!-- ***** END - Content Boton C - 3 ***** -->
+            <!-- ***** START - Content Boton D - 4 ***** -->
+            <div class="col">
+				<div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+						<h4 class="my-0 fw-normal">Bot&oacute;n D - 4</h4>
+					</div>
+					<div class="card-body">
+						<p class="lead">
+                            Este bot&oacute;n contiene la leta <strong>D</strong> y/o el n&uacute;mero <strong>4</strong>
+                        </p>
+						<button id="btnD4" type="button" class="w-100 btn btn-lg btn-primary">D - 4</button>
+					</div>
+				</div>
+			</div>
+            <!-- ***** END - Content Boton D - 4 ***** -->
+            <!-- ***** START - Content Boton E - 5 ***** -->
+            <div class="col">
+				<div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+						<h4 class="my-0 fw-normal">Bot&oacute;n E - 5</h4>
+					</div>
+					<div class="card-body">
+						<p class="lead">
+                            Este bot&oacute;n contiene la leta <strong>E</strong> y/o el n&uacute;mero <strong>5</strong>
+                        </p>
+						<button id="btnE5" type="button" class="w-100 btn btn-lg btn-primary">E - 5</button>
+					</div>
+				</div>
+			</div>
+            <!-- ***** END - Content Boton E - 5 ***** -->
+            <!-- ***** START - Content Boton F - 6 ***** -->
+            <div class="col">
+				<div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+						<h4 class="my-0 fw-normal">Bot&oacute;n F - 6</h4>
+					</div>
+					<div class="card-body">
+						<p class="lead">
+                            Este bot&oacute;n contiene la leta <strong>F</strong> y/o el n&uacute;mero <strong>6</strong>
+                        </p>
+						<button id="btnF6" type="button" class="w-100 btn btn-lg btn-primary">F - 6</button>
+					</div>
+				</div>
+			</div>
+            <!-- ***** END - Content Boton F - 6 ***** -->
+            <!-- ***** START - Content Boton G - 7 ***** -->
+            <div class="col">
+				<div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+						<h4 class="my-0 fw-normal">Bot&oacute;n G - 7</h4>
+					</div>
+					<div class="card-body">
+						<p class="lead">
+                            Este bot&oacute;n contiene la leta <strong>G</strong> y/o el n&uacute;mero <strong>7</strong>
+                        </p>
+						<button id="btnG7" type="button" class="w-100 btn btn-lg btn-primary">G - 7</button>
+					</div>
+				</div>
+			</div>
+            <!-- ***** END - Content Boton G - 7 ***** -->
+            <!-- ***** START - Content Boton H - 8 ***** -->
+            <div class="col">
+				<div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+						<h4 class="my-0 fw-normal">Bot&oacute;n H - 8</h4>
+					</div>
+					<div class="card-body">
+						<p class="lead">
+                            Este bot&oacute;n contiene la leta <strong>H</strong> y/o el n&uacute;mero <strong>8</strong>
+                        </p>
+						<button id="btnH8" type="button" class="w-100 btn btn-lg btn-primary">H - 8</button>
+					</div>
+				</div>
+			</div>
+            <!-- ***** END - Content Boton H - 8 ***** -->
+            <!-- ***** START - Content Boton I - 9 ***** -->
+            <div class="col">
+				<div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+						<h4 class="my-0 fw-normal">Bot&oacute;n I - 9</h4>
+					</div>
+					<div class="card-body">
+						<p class="lead">
+                            Este bot&oacute;n contiene la leta <strong>I</strong> y/o el n&uacute;mero <strong>9</strong>
+                        </p>
+						<button id="btnI9" type="button" class="w-100 btn btn-lg btn-primary">I - 9</button>
+					</div>
+				</div>
+			</div>
+            <!-- ***** END - Content Boton I - 9 ***** -->
+            <!-- ***** START - Content Boton J - 10 ***** -->
+            <div class="col">
+				<div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+						<h4 class="my-0 fw-normal">Bot&oacute;n J - 10</h4>
+					</div>
+					<div class="card-body">
+						<p class="lead">
+                            Este bot&oacute;n contiene la leta <strong>J</strong> y/o el n&uacute;mero <strong>10</strong>
+                        </p>
+						<button id="btnJ10" type="button" class="w-100 btn btn-lg btn-primary">J - 10</button>
+					</div>
+				</div>
+			</div>
+            <!-- ***** END - Content Boton J - 10 ***** -->
+		</div>
+
+		<footer class="pt-4 my-md-5 pt-md-5 border-top">
+			<div class="row">
+				<div class="col-12 col-md">
+                    <p>Reto profesor <strong>Andres Snaches</strong> - Reto Sanchezcode Challenge</p>
+                    <p>
+                        Alumno desarrollador: <strong>German Pinilla</strong>
+                    </p>
+                    <small class="d-block mb-3 text-muted">&copy; 2021–2022</small>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <!-- ********** START - Scripts de la pagina ********** -->
+    <!-- ******* START - Custom scripts ******* -->
+    <script src="./assets/js/sanchezcode.js"></script>
+    <!-- ******* END - Custom scripts ******* -->
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="./assets/js/jquery-3.6.0.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <!-- *********** END - Scripts de la pagina *********** -->
+</body>
+</html>
+<!-- *********** END - Fin documento html *********** -->
